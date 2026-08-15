@@ -34,7 +34,7 @@ class MizanApp extends StatelessWidget {
             GlobalWidgetsLocalizations.delegate,
             GlobalCupertinoLocalizations.delegate,
           ],
-          initialRoute: AppRoutes.auth,
+          initialRoute: AppRoutes.splash,
           getPages: AppPages.pages,
         ));
   }

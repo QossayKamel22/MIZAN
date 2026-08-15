@@ -17,14 +17,14 @@ class LanguageScreen extends StatelessWidget {
             child: RadioGroup<Locale>(
               groupValue: localeController.locale.value,
               onChanged: (v) => localeController.setLocale(v!),
-              child: Column(
+              child: const Column(
                 children: [
                   RadioListTile<Locale>(
-                    title: const Text('العربية'),
+                    title: Text('العربية'),
                     value: AppLocales.arabic,
                   ),
                   RadioListTile<Locale>(
-                    title: const Text('English'),
+                    title: Text('English'),
                     value: AppLocales.english,
                   ),
                 ],

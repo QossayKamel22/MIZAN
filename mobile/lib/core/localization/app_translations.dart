@@ -26,13 +26,31 @@ class AppTranslations extends Translations {
     // Auth
     'auth_login': 'Log In',
     'auth_register': 'Create Account',
+    'auth_name': 'Name',
     'auth_email': 'Email',
     'auth_password': 'Password',
+    'auth_confirm_password': 'Confirm Password',
     'auth_forgot_password': 'Forgot password?',
     'auth_no_account': "Don't have an account?",
     'auth_have_account': 'Already have an account?',
     'auth_login_failed': 'Login failed. Check your credentials and try again.',
     'auth_register_failed': 'Could not create account. Please try again.',
+    'auth_name_required': 'Name is required',
+    'auth_passwords_dont_match': "Passwords don't match",
+    'auth_reset_password': 'Reset Password',
+    'auth_reset_password_instructions':
+        "Enter your email and we'll send you a link to reset your password.",
+    'auth_reset_password_send': 'Send Reset Link',
+    'auth_reset_password_sent':
+        'If an account exists for this email, a reset link has been sent.',
+    'auth_error_invalid_email': 'That email address looks invalid.',
+    'auth_error_weak_password': 'Choose a stronger password (at least 8 characters).',
+    'auth_error_email_in_use': 'An account already exists with this email.',
+    'auth_error_user_not_found': 'No account found with these credentials.',
+    'auth_error_wrong_password': 'Incorrect email or password.',
+    'auth_error_user_disabled': 'This account has been disabled.',
+    'auth_error_too_many_requests': 'Too many attempts. Please wait and try again.',
+    'auth_error_network': 'Network error. Check your connection and try again.',
 
     // Dashboard
     'dashboard_title': 'Dashboard',
@@ -106,13 +124,31 @@ class AppTranslations extends Translations {
     // Auth
     'auth_login': 'تسجيل الدخول',
     'auth_register': 'إنشاء حساب',
+    'auth_name': 'الاسم',
     'auth_email': 'البريد الإلكتروني',
     'auth_password': 'كلمة المرور',
+    'auth_confirm_password': 'تأكيد كلمة المرور',
     'auth_forgot_password': 'نسيت كلمة المرور؟',
     'auth_no_account': 'ليس لديك حساب؟',
     'auth_have_account': 'لديك حساب بالفعل؟',
     'auth_login_failed': 'فشل تسجيل الدخول. تحقق من بياناتك وحاول مرة أخرى.',
     'auth_register_failed': 'تعذّر إنشاء الحساب. حاول مرة أخرى.',
+    'auth_name_required': 'الاسم مطلوب',
+    'auth_passwords_dont_match': 'كلمتا المرور غير متطابقتين',
+    'auth_reset_password': 'إعادة تعيين كلمة المرور',
+    'auth_reset_password_instructions':
+        'أدخل بريدك الإلكتروني وسنرسل لك رابطاً لإعادة تعيين كلمة المرور.',
+    'auth_reset_password_send': 'إرسال رابط إعادة التعيين',
+    'auth_reset_password_sent':
+        'إذا كان هناك حساب مرتبط بهذا البريد، فسيتم إرسال رابط إعادة التعيين إليه.',
+    'auth_error_invalid_email': 'البريد الإلكتروني غير صالح.',
+    'auth_error_weak_password': 'اختر كلمة مرور أقوى (8 أحرف على الأقل).',
+    'auth_error_email_in_use': 'يوجد حساب مسجل بالفعل بهذا البريد الإلكتروني.',
+    'auth_error_user_not_found': 'لا يوجد حساب بهذه البيانات.',
+    'auth_error_wrong_password': 'البريد الإلكتروني أو كلمة المرور غير صحيحة.',
+    'auth_error_user_disabled': 'تم تعطيل هذا الحساب.',
+    'auth_error_too_many_requests': 'محاولات كثيرة جداً. الرجاء الانتظار والمحاولة مرة أخرى.',
+    'auth_error_network': 'خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى.',
 
     // Dashboard
     'dashboard_title': 'الرئيسية',

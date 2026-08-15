@@ -75,7 +75,12 @@ class LoginScreen extends GetView<AuthController> {
                             : Text('auth_login'.tr),
                       ),
                     )),
-                const SizedBox(height: AppSpacing.lg),
+                Center(
+                  child: TextButton(
+                    onPressed: () => Get.toNamed(AppRoutes.resetPassword),
+                    child: Text('auth_forgot_password'.tr),
+                  ),
+                ),
                 Center(
                   child: TextButton(
                     onPressed: () => Get.toNamed(AppRoutes.register),

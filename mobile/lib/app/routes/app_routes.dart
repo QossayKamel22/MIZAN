@@ -6,6 +6,7 @@ abstract class AppRoutes {
   static const auth = '/auth';
   static const login = '/auth/login';
   static const register = '/auth/register';
+  static const resetPassword = '/auth/reset-password';
 
   static const dashboard = '/dashboard';
 
