@@ -110,6 +110,30 @@ v1 (this build) → hardening (live Firebase, live LLM, offline support) → Ope
 
 This repository reflects real, working, tested code for the architecture described above — not placeholders. It is pre-Milestone-A engineering work (see [`docs/RELEASE_PLAN.md`](docs/RELEASE_PLAN.md)): a live Firebase project, a live LLM provider key, and a deployed PostgreSQL instance are the concrete pending items before this becomes a running product end-to-end. See [`docs/FINAL_TECHNICAL_REPORT.md`](docs/FINAL_TECHNICAL_REPORT.md) for the complete, honest status of every component.
 
+## Screenshots 
+
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/2f42ec3b-b275-4ff5-ae89-047cbe2145bd" /> 
+
+
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/1a40bbd4-00cd-4603-9dac-de292b4143da" /> 
+
+
+
+<img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/069da15c-6689-4499-bf4b-80e7ac914bd8" /> 
+
+
+
+
+<img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/037e2405-fd85-4e8c-b74b-2a54c1f79982" />
+
+
+
+
+
+
+
+
 ## License
 
 Proprietary — all rights reserved.
