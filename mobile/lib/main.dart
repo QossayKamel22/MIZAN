@@ -6,7 +6,16 @@ import 'firebase_options.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  try {
+    await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
+  } catch (e) {
+    // Expected until real Firebase project values are set in
+    // firebase_options.dart (see its TODO(firebase-config) comments) — the
+    // app still renders so it can be reviewed; auth calls will fail until
+    // real config is in place (docs/FINAL_TECHNICAL_REPORT.md §4).
+    debugPrint('Firebase.initializeApp failed — auth will not work until '
+        'firebase_options.dart has real project values: $e');
+  }
   await GetStorage.init();
   runApp(const MizanApp());
 }

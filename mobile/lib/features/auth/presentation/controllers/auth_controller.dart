@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:get/get.dart';
 
@@ -17,13 +18,19 @@ const _tokenStorageKey = 'firebase_id_token';
 /// reactive state, keeps the ID token in secure storage in sync (consumed
 /// by `ApiClient`'s request interceptor), and syncs the MIZAN profile row
 /// on the backend after sign-in.
+///
+/// `_auth` is null when no Firebase app was initialized (pending real
+/// `firebase_options.dart` values — see its TODO(firebase-config)
+/// comments). In that state every auth action reports a clear
+/// "not configured" error instead of crashing the app, so the rest of the
+/// UI stays reviewable.
 class AuthController extends GetxController {
   AuthController({FirebaseAuth? firebaseAuth, FlutterSecureStorage? secureStorage, ApiClient? apiClient})
-      : _auth = firebaseAuth ?? FirebaseAuth.instance,
+      : _auth = firebaseAuth ?? (Firebase.apps.isNotEmpty ? FirebaseAuth.instance : null),
         _secureStorage = secureStorage ?? const FlutterSecureStorage(),
         _apiClient = apiClient ?? ApiClient(baseUrl: AppConfig.apiBaseUrl);
 
-  final FirebaseAuth _auth;
+  final FirebaseAuth? _auth;
   final FlutterSecureStorage _secureStorage;
   final ApiClient _apiClient;
   StreamSubscription<User?>? _idTokenSub;
@@ -34,13 +41,19 @@ class AuthController extends GetxController {
   final RxnString errorMessage = RxnString();
 
   bool get isAuthenticated => currentUser.value != null;
+  bool get isFirebaseConfigured => _auth != null;
 
   @override
   void onInit() {
     super.onInit();
+    final auth = _auth;
+    if (auth == null) {
+      isInitializing.value = false;
+      return;
+    }
     // Firebase auto-refreshes the ID token; mirroring it here on every
     // change keeps ApiClient's stored token from ever going stale.
-    _idTokenSub = _auth.idTokenChanges().listen(_onIdTokenChanged);
+    _idTokenSub = auth.idTokenChanges().listen(_onIdTokenChanged);
   }
 
   @override
@@ -69,10 +82,15 @@ class AuthController extends GetxController {
   }
 
   Future<void> login(String email, String password) async {
+    final auth = _auth;
+    if (auth == null) {
+      errorMessage.value = 'auth_error_not_configured'.tr;
+      return;
+    }
     isLoading.value = true;
     errorMessage.value = null;
     try {
-      await _auth.signInWithEmailAndPassword(email: email.trim(), password: password);
+      await auth.signInWithEmailAndPassword(email: email.trim(), password: password);
       await _syncProfile();
       Get.offAllNamed(AppRoutes.dashboard);
     } on FirebaseAuthException catch (e) {
@@ -85,10 +103,15 @@ class AuthController extends GetxController {
   }
 
   Future<void> register(String name, String email, String password) async {
+    final auth = _auth;
+    if (auth == null) {
+      errorMessage.value = 'auth_error_not_configured'.tr;
+      return;
+    }
     isLoading.value = true;
     errorMessage.value = null;
     try {
-      final credential = await _auth.createUserWithEmailAndPassword(
+      final credential = await auth.createUserWithEmailAndPassword(
         email: email.trim(),
         password: password,
       );
@@ -126,10 +149,15 @@ class AuthController extends GetxController {
   }
 
   Future<void> sendPasswordResetEmail(String email) async {
+    final auth = _auth;
+    if (auth == null) {
+      errorMessage.value = 'auth_error_not_configured'.tr;
+      throw StateError('Firebase is not configured');
+    }
     isLoading.value = true;
     errorMessage.value = null;
     try {
-      await _auth.sendPasswordResetEmail(email: email.trim());
+      await auth.sendPasswordResetEmail(email: email.trim());
     } on FirebaseAuthException catch (e) {
       errorMessage.value = _messageFor(e);
       rethrow;
@@ -142,7 +170,7 @@ class AuthController extends GetxController {
   }
 
   Future<void> logout() async {
-    await _auth.signOut();
+    await _auth?.signOut();
     Get.offAllNamed(AppRoutes.auth);
   }
 

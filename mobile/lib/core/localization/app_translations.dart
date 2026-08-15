@@ -51,6 +51,8 @@ class AppTranslations extends Translations {
     'auth_error_user_disabled': 'This account has been disabled.',
     'auth_error_too_many_requests': 'Too many attempts. Please wait and try again.',
     'auth_error_network': 'Network error. Check your connection and try again.',
+    'auth_error_not_configured':
+        'Sign-in is not available yet — this build is not connected to a live Firebase project.',
 
     // Dashboard
     'dashboard_title': 'Dashboard',
@@ -149,6 +151,8 @@ class AppTranslations extends Translations {
     'auth_error_user_disabled': 'تم تعطيل هذا الحساب.',
     'auth_error_too_many_requests': 'محاولات كثيرة جداً. الرجاء الانتظار والمحاولة مرة أخرى.',
     'auth_error_network': 'خطأ في الشبكة. تحقق من اتصالك وحاول مرة أخرى.',
+    'auth_error_not_configured':
+        'تسجيل الدخول غير متاح حالياً — هذا الإصدار غير متصل بمشروع Firebase حقيقي بعد.',
 
     // Dashboard
     'dashboard_title': 'الرئيسية',
