@@ -1,0 +1,22 @@
+[
+  {
+    "question": "Where did I spend the most this month?",
+    "expected_intent": "spending_analysis",
+    "expected_tool": "get_spending_by_category"
+  },
+  {
+    "question": "Can I afford a big purchase right now?",
+    "expected_intent": "recommendation",
+    "expected_tool": "get_budget_status"
+  },
+  {
+    "question": "What bills do I have coming up?",
+    "expected_intent": "bill_assistant",
+    "expected_tool": "get_upcoming_bills"
+  },
+  {
+    "question": "How much money do I have left this month?",
+    "expected_intent": "general_qa",
+    "expected_tool": "get_income_vs_expense"
+  }
+]
