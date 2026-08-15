@@ -30,7 +30,7 @@ dependencies:
   local_auth: ^2.2.0
 
   # Formatting
-  intl: ^0.19.0
+  intl: ^0.20.2
 
   # UI utilities
   fl_chart: ^0.68.0
@@ -60,13 +60,6 @@ flutter:
     - assets/images/
     - assets/icons/
 
-  fonts:
-    - family: MizanSans
-      fonts:
-        - asset: assets/fonts/MizanSans-Regular.ttf
-        - asset: assets/fonts/MizanSans-Medium.ttf
-          weight: 500
-        - asset: assets/fonts/MizanSans-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/MizanSans-Bold.ttf
-          weight: 700
+  # MizanSans font files are not yet sourced (design asset pending).
+  # app_typography.dart references the family name; until real font
+  # files are added here, Flutter falls back to the system default.

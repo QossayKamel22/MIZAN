@@ -14,21 +14,21 @@ class LanguageScreen extends StatelessWidget {
       appBar: AppBar(title: Text('settings_language'.tr)),
       body: Obx(() => Padding(
             padding: const EdgeInsets.all(AppSpacing.lg),
-            child: Column(
-              children: [
-                RadioListTile<Locale>(
-                  title: const Text('العربية'),
-                  value: AppLocales.arabic,
-                  groupValue: localeController.locale.value,
-                  onChanged: (v) => localeController.setLocale(v!),
-                ),
-                RadioListTile<Locale>(
-                  title: const Text('English'),
-                  value: AppLocales.english,
-                  groupValue: localeController.locale.value,
-                  onChanged: (v) => localeController.setLocale(v!),
-                ),
-              ],
+            child: RadioGroup<Locale>(
+              groupValue: localeController.locale.value,
+              onChanged: (v) => localeController.setLocale(v!),
+              child: Column(
+                children: [
+                  RadioListTile<Locale>(
+                    title: const Text('العربية'),
+                    value: AppLocales.arabic,
+                  ),
+                  RadioListTile<Locale>(
+                    title: const Text('English'),
+                    value: AppLocales.english,
+                  ),
+                ],
+              ),
             ),
           )),
     );

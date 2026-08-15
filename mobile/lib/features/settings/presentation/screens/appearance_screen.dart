@@ -14,27 +14,25 @@ class AppearanceScreen extends StatelessWidget {
       appBar: AppBar(title: Text('settings_appearance'.tr)),
       body: Obx(() => Padding(
             padding: const EdgeInsets.all(AppSpacing.lg),
-            child: Column(
-              children: [
-                RadioListTile<AppThemeMode>(
-                  title: Text('settings_theme_system'.tr),
-                  value: AppThemeMode.system,
-                  groupValue: themeController.mode.value,
-                  onChanged: (v) => themeController.setMode(v!),
-                ),
-                RadioListTile<AppThemeMode>(
-                  title: Text('settings_theme_light'.tr),
-                  value: AppThemeMode.light,
-                  groupValue: themeController.mode.value,
-                  onChanged: (v) => themeController.setMode(v!),
-                ),
-                RadioListTile<AppThemeMode>(
-                  title: Text('settings_theme_dark'.tr),
-                  value: AppThemeMode.dark,
-                  groupValue: themeController.mode.value,
-                  onChanged: (v) => themeController.setMode(v!),
-                ),
-              ],
+            child: RadioGroup<AppThemeMode>(
+              groupValue: themeController.mode.value,
+              onChanged: (v) => themeController.setMode(v!),
+              child: Column(
+                children: [
+                  RadioListTile<AppThemeMode>(
+                    title: Text('settings_theme_system'.tr),
+                    value: AppThemeMode.system,
+                  ),
+                  RadioListTile<AppThemeMode>(
+                    title: Text('settings_theme_light'.tr),
+                    value: AppThemeMode.light,
+                  ),
+                  RadioListTile<AppThemeMode>(
+                    title: Text('settings_theme_dark'.tr),
+                    value: AppThemeMode.dark,
+                  ),
+                ],
+              ),
             ),
           )),
     );
