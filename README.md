@@ -1,5 +1,13 @@
 # MIZAN (ميزان)
 
+<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/2f42ec3b-b275-4ff5-ae89-047cbe2145bd" /> 
+
+
+
+
+
+
+
 Smart personal financial management for the UAE and Arab market — income, budgets, transfers, bills, savings, goals, and AI-powered financial insight in one trustworthy, premium, Arabic-first app.
 
 **Simple + Premium + Modern + Trustworthy + Intelligent.**
@@ -112,7 +120,6 @@ This repository reflects real, working, tested code for the architecture describ
 
 ## Screenshots 
 
-<img width="1254" height="1254" alt="image" src="https://github.com/user-attachments/assets/2f42ec3b-b275-4ff5-ae89-047cbe2145bd" /> 
 
 
 
