@@ -1,0 +1,72 @@
+name: mizan
+description: "MIZAN (ميزان) — Smart personal financial management for the UAE and Arab market."
+publish_to: 'none'
+version: 0.1.0+1
+
+environment:
+  sdk: '>=3.3.0 <4.0.0'
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+
+  # State management, DI, navigation
+  get: ^4.6.6
+
+  # Networking
+  dio: ^5.4.3
+
+  # Firebase
+  firebase_core: ^2.31.0
+  firebase_auth: ^4.19.5
+  firebase_messaging: ^14.9.2
+  cloud_firestore: ^4.17.3
+
+  # Local storage / secure storage
+  get_storage: ^2.1.1
+  flutter_secure_storage: ^9.2.2
+  local_auth: ^2.2.0
+
+  # Formatting
+  intl: ^0.19.0
+
+  # UI utilities
+  fl_chart: ^0.68.0
+  flutter_svg: ^2.0.10+1
+  cupertino_icons: ^1.0.6
+
+  # Functional error handling
+  dartz: ^0.10.1
+
+  # Equality
+  equatable: ^2.0.5
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  integration_test:
+    sdk: flutter
+  flutter_lints: ^4.0.0
+  mocktail: ^1.0.3
+  build_runner: ^2.4.11
+
+flutter:
+  uses-material-design: true
+  generate: true
+
+  assets:
+    - assets/images/
+    - assets/icons/
+
+  fonts:
+    - family: MizanSans
+      fonts:
+        - asset: assets/fonts/MizanSans-Regular.ttf
+        - asset: assets/fonts/MizanSans-Medium.ttf
+          weight: 500
+        - asset: assets/fonts/MizanSans-SemiBold.ttf
+          weight: 600
+        - asset: assets/fonts/MizanSans-Bold.ttf
+          weight: 700
