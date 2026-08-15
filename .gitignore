@@ -1,0 +1,65 @@
+# ==== General ====
+.DS_Store
+*.log
+.idea/
+.vscode/
+*.iml
+.env
+.env.local
+.env.*.local
+
+# ==== Flutter / Dart ====
+mobile/.dart_tool/
+mobile/.flutter-plugins
+mobile/.flutter-plugins-dependencies
+mobile/.packages
+mobile/.pub-cache/
+mobile/.pub/
+mobile/build/
+mobile/**/ios/Pods/
+mobile/**/ios/.symlinks/
+mobile/**/ios/Flutter/Flutter.framework
+mobile/**/ios/Flutter/Flutter.podspec
+mobile/**/android/.gradle
+mobile/**/android/captures/
+mobile/**/android/gradlew
+mobile/**/android/gradlew.bat
+mobile/**/android/local.properties
+mobile/**/android/**/GeneratedPluginRegistrant.java
+mobile/**/*.g.dart
+mobile/**/*.freezed.dart
+mobile/coverage/
+mobile/android/key.properties
+mobile/**/google-services.json
+mobile/**/GoogleService-Info.plist
+
+# ==== Python / Backend / AI ====
+backend/__pycache__/
+backend/**/__pycache__/
+backend/*.pyc
+backend/.venv/
+backend/venv/
+backend/.pytest_cache/
+backend/.mypy_cache/
+backend/*.egg-info/
+ai/__pycache__/
+ai/**/__pycache__/
+ai/.venv/
+ai/venv/
+ai/.pytest_cache/
+__pycache__/
+*.pyc
+.venv/
+
+# ==== Firebase / Secrets ====
+*firebase-adminsdk*.json
+serviceAccountKey.json
+firebase-debug.log
+.firebase/
+*.pem
+*.key
+
+# ==== Misc ====
+*.tmp
+.env.example.local
+node_modules/
