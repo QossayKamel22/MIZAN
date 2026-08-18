@@ -6,9 +6,11 @@
 
 
 
-
+---
 
 Smart personal financial management for the UAE and Arab market — income, budgets, transfers, bills, savings, goals, and AI-powered financial insight in one trustworthy, premium, Arabic-first app.
+
+---
 
 **Simple + Premium + Modern + Trustworthy + Intelligent.**
 
@@ -125,16 +127,15 @@ This repository reflects real, working, tested code for the architecture describ
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/1a40bbd4-00cd-4603-9dac-de292b4143da" /> 
 
-
+---
 
 <img width="1024" height="1536" alt="image" src="https://github.com/user-attachments/assets/069da15c-6689-4499-bf4b-80e7ac914bd8" /> 
 
-
-
+---
 
 <img width="1536" height="1024" alt="image" src="https://github.com/user-attachments/assets/037e2405-fd85-4e8c-b74b-2a54c1f79982" />
 
-
+---
 
 
 
